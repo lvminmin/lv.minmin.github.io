@@ -84,11 +84,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/标题/" data-id="cjutp9aie000188pilqc7s98z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/23/标题/" data-id="cjutpphi60001r4pim6prxsy6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,7 +112,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/23/hello-world/">Git</a>
+      <a class="article-title" href="/2019/04/23/hello-world/">Hello World</a>
     </h1>
   
 
@@ -120,28 +120,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init        //初始化一个git本地仓库。</span><br><span class="line">git status      /查看仓库的状态（是否有新改动的文件）</span><br><span class="line">git diff xxx    //查看xxx文件具体的改动。</span><br><span class="line">git clone       //远程仓库地址   从目标仓库克隆一份代码到本地仓库。</span><br><span class="line">git add filename  //在本地仓库新增一个文件 （git add . 增加所有文件）。</span><br><span class="line">git commint -m &quot;message&quot;  //提交文件到本地仓库。</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^      //退回到上一个版本</span><br><span class="line">git reset --hard HEAD^^     //退回到前2个版本</span><br><span class="line">git reset --hard HEAD~100   //退回到前100个版本</span><br><span class="line">git reset --hard commit_id  //如何还能拿到未来的一个commit id,就能重新回到这个版本上。</span><br><span class="line">git checkout -- filename    //撤销最近一次修改（其实是用版本库里的版本替换工作区的版本）</span><br><span class="line">git rm filename         //删除一个文件</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@server-name:path/repo-name.git    //新建一个远程仓库</span><br><span class="line">git push -u origin master   //第一次推送到远程的master仓库</span><br><span class="line">git push origin master      //推送最新的修改到远程仓库master</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="从远程仓库克隆到本地"><a href="#从远程仓库克隆到本地" class="headerlink" title="从远程仓库克隆到本地"></a>从远程仓库克隆到本地</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:path/xxx.git       //从远程仓库地址克隆到本地  </span><br><span class="line">git pull git@github.com:path/xxx.git        //从远程git仓库拉取代码。</span><br><span class="line">git push git@github.com:path/xxx.git        //将本地仓库代码提交到远程git仓库。</span><br></pre></td></tr></table></figure>
-<h4 id="版本回退-1"><a href="#版本回退-1" class="headerlink" title="版本回退"></a>版本回退</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reflog  //查看版本commit id</span><br><span class="line">git reset --hard  commit_id   //回退版本</span><br><span class="line">git push origin branch_name -f   //强制推送到远程分支</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b branch-name :创建并切换到当前分支。</span><br><span class="line">git checkout branch-name : 切换分支。</span><br><span class="line">git merge branch-name : 合并指定分支到当前分支。</span><br><span class="line">git merge --no-ff -m &apos;xxx&apos; dev   :禁用fast forword 模式合并分支，这样能看到合并的历史记录。</span><br><span class="line">git branch branch-name : 创建本地分支。</span><br><span class="line">git branch -d branch-name : 删除分支。</span><br><span class="line">git branch -a 查看远程分支。</span><br><span class="line">git branch   查看本地分支。</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="查看提交日志"><a href="#查看提交日志" class="headerlink" title="查看提交日志"></a>查看提交日志</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log                          //查看提交的历史记录</span><br><span class="line">git log --pretty=oneline         //历史记录行内显示</span><br><span class="line">git log --graph --pretty=oneline //查看分支合并图</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="暂存代码"><a href="#暂存代码" class="headerlink" title="暂存代码"></a>暂存代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#冲突解决</span><br><span class="line">git stach       //把当前工作现场“储藏”起来</span><br><span class="line">git pull origin branch-name  //拉取远程分支</span><br><span class="line">git stash pop   //恢复stach区的内容并删除stach区</span><br><span class="line">git push origin branch-name   //推送到远程分支</span><br><span class="line"></span><br><span class="line">#补充</span><br><span class="line">git stach list  //查看隐藏的内容。</span><br><span class="line">git stach apply //恢复stach区的内容不删除stach区。</span><br><span class="line">git stach apply stash@&#123;0&#125;   //恢复某个版本的内容。</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="检出远程分支到本地，并关联远程对应分支。"><a href="#检出远程分支到本地，并关联远程对应分支。" class="headerlink" title="检出远程分支到本地，并关联远程对应分支。"></a>检出远程分支到本地，并关联远程对应分支。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch -p 更新本地分支</span><br><span class="line">git branch --track feature_v1 origin/feature_v1   检出远程分支到本地</span><br></pre></td></tr></table></figure>
-<h4 id="丢弃本地修改"><a href="#丢弃本地修改" class="headerlink" title="丢弃本地修改"></a>丢弃本地修改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout 文件名     //丢弃某个文件</span><br><span class="line">git checkout            //放弃所有文件的所有修改</span><br></pre></td></tr></table></figure>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/hello-world/" data-id="cjutp9ai7000088pi72iybxct" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/23/hello-world/" data-id="cjutpphi00000r4pi3qdeje3x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +178,7 @@
           </li>
         
           <li>
-            <a href="/2019/04/23/hello-world/">Git</a>
+            <a href="/2019/04/23/hello-world/">Hello World</a>
           </li>
         
       </ul>
